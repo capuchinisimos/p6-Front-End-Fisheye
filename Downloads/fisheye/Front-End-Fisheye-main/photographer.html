@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet">
+    <title>Fisheye - photographe</title>
+  </head>
+  <body>
+
+    <header>
+      <a href="../index.html" aria-label="Retour à la page d'accueil">
+        <img src="../assets/images/logo.png" class="logo"
+          alt="Fisheye Home Page" tabindex="1">
+      </a>
+    </header>
+
+    <main id="main" aria-hidden="false">
+      <div class="photograph-header">
+        <!-- Profil -->
+        <section class="profil">
+          <div class="photograph-header" id="photographProfile"></div>
+          <div class="headerPhotographer"></div>
+          <div class="LikeCounter" tabindex="6"></div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filter">
+          <div class="filter_option">
+            <label for="selector-modal-type-picture" tabindex="7">Trier par</label>
+            <select id="selector-modal-type-picture"
+              aria-label="Sélection du type de tri">
+              <option value="popularity">Popularité</option>
+              <option value="date">Date</option>
+              <option value="title">Titre</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="portfolio">
+          <div id="photographerPageGallery"></div>
+        </section>
+      </div>
+    </main>
+    <div class="modal" role="dialog" aria-labelledby="form-title"
+    aria-hidden="true" tabindex="-1">
+   <div class="modal-content" >
+       <header class="modal-header">
+           <h1 id="modalheadertitle" class="modal-header-title">
+               <span>Contactez-moi</span></br> 
+               <span id="name_header"></span>
+              </h1>
+               
+               
+           
+           <span class="close"><i class="fa-solid fa-x"></i></span>
+       </header>
+       <form>
+           <div>
+               <label for="firstname">Prénom</label>
+               <input type="text" name="firstname" tabindex="3" id="firstname" required>
+           </div>
+           <div>
+               <label for="lastname">Nom</label>
+               <input type="text" name="lastname" tabindex="3" id="lastname" required>
+           </div>
+           <div>
+               <label for="email">Email</label>
+               <input type="email" name="lastname" tabindex="3" id="email" required>
+           </div>
+           <div>
+               <label for="message">Votre message</label>
+               <input tabindex="3" id="message">
+           </div>
+       </form>
+       <button type="submit" class="modal-button" id="form-submit-button" tabindex="3">Envoyer</button>
+   </div>
+</div>
+
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" aria-label="Visionneuse d'images" role="dialog">
+      <button class="arrow arrow-left" id="arrow-left"
+        aria-label="Image précédente">
+        <span class="fa-solid fa-angle-left"></span>
+      </button>
+      <div id="lightboxMedia"></div>
+      <div class="arrowRightAndClose">
+        <button class="arrow arrow-right" id="arrow-right"
+          aria-label="Image suivante">
+          <span class="fa-solid fa-angle-right"></span>
+        </button>
+        <button class="close-button" aria-label="Fermer la visionneuse">
+          <span class="fa-solid fa-x"></span>
+        </button>
+      </div>
+    </div>
+
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/templates/photographer.js"></script>
+    <script src="/scripts/pages/media.js"></script>
+
+  </body>
+</html>
